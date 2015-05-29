@@ -7,7 +7,7 @@ app.set('view engine', 'jade');
 
 app.use(bodyparser.urlencoded({extended: false}));
 
-app.listen(process.argv[2] || process.env.PORT);
+app.listen(process.env.PORT);
 
 var T = new twit({
 	consumer_key:  'in7A1ZHEaTevLAGQeHKAlAp1o',
