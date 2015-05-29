@@ -7,6 +7,8 @@ app.set('view engine', 'jade');
 
 app.use(bodyparser.urlencoded({extended: false}));
 
+app.listen(process.argv[2] || process.env.PORT);
+
 var T = new twit({
 	consumer_key:  'in7A1ZHEaTevLAGQeHKAlAp1o',
 	consumer_secret: 'roZzZspwbiSv3BlZ0SDmxHX5E40eaR1NkwWkrLfKP2cWiexD9L',
@@ -43,4 +45,3 @@ app.post('/', function(req, res) {
 	// var reversed = req.body.str.split('').reverse().join('');
 	// res.render('result', {string: reversed});
 });
-app.listen(process.argv[2] || process.env.PORT);
