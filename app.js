@@ -3,9 +3,11 @@ var app = express();
 var bodyparser = require('body-parser');
 var twit = require('twit');
 
+app.set('views', './views');
 app.set('view engine', 'jade');
 
 app.use(bodyparser.urlencoded({extended: false}));
+app.use(express.errorHandler());
 
 var T = new twit({
 	consumer_key: process.env.TWIT_CONSUMER_KEY,
