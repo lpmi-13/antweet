@@ -8,10 +8,10 @@ app.set('view engine', 'jade');
 app.use(bodyparser.urlencoded({extended: false}));
 
 var T = new twit({
-	consumer_key:  'in7A1ZHEaTevLAGQeHKAlAp1o',
-	consumer_secret: 'roZzZspwbiSv3BlZ0SDmxHX5E40eaR1NkwWkrLfKP2cWiexD9L',
-	access_token: '3247362459-eZZuEkG4B1FoI5SsB3Wjdfcd2CvF8eqPy2Xjie2',
-	access_token_secret: 'GgihfZQQsF95JJD6mvSECzaXhp7MZ1ROPSKIKso9loRVT'
+	consumer_key: process.env.TWIT_CONSUMER_KEY,
+	consumer_secret: process.env.TWIT_CONSUMER_SECRET,
+	access_token: process.env.TWIT_ACCESS_TOKEN,
+	access_token_secret: process.env.TWIT_ACCESS_TOKEN_SECRET
 });
 
 // function findTweet() {

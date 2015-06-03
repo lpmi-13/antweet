@@ -1,16 +1,16 @@
 {
-	"name": "tweeter",
-	"version": "0.0.1",
-	"private": "true",
-	"description": "this is a test to fetch tweets",
-	"author": "Adam Leskis",
-	"main": "app.js",
-	"dependencies": {
-		"express": "~4.12.0",
-		"jade": "*",
-		"twit": "^1.1.0"
-	},
-	"engine": {
-		"node": "0.10.x"
-	}
+  "name": "tweeter",
+  "version": "0.0.1",
+  "private": "true",
+  "description": "this is a test to fetch tweets",
+  "author": "Adam Leskis",
+  "main": "app.js",
+  "dependencies": {
+    "express": "~4.12.0",
+    "jade": "^1.10.0",
+    "twit": "^1.1.0"
+  },
+  "engine": {
+    "node": "0.10.x"
+  }
 }
