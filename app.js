@@ -35,7 +35,7 @@ app.post('/', function(req, res) {
 			var topd = data.statuses.map(function(t){
 			return t.text;
 		});
-		res.render('result', {string: topd});
+		res.render('result', {string: 'the tweet is' + topd});
 	});
 }
 	findTweet();
