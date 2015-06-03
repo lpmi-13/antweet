@@ -1,3 +1,7 @@
 .boom {
-	background-color: green;
+	font-color: green;
+}
+
+.res {
+	font-color: red;
 }

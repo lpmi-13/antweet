@@ -43,4 +43,4 @@ app.post('/', function(req, res) {
 	// var reversed = req.body.str.split('').reverse().join('');
 	// res.render('result', {string: reversed});
 });
-app.listen(process.env.PORT);
+app.listen(3000 || process.env.PORT);
