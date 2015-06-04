@@ -7,13 +7,11 @@ var express = require('express'),
 	stylus = require('stylus'),
 	nib = require('nib'),
 	twit = require('twit'),
-	app = express();
-
-	function compile(str, path) {
+	app = express(function compile(str, path) {
 		return stylus(str)
 		.set('filename', path)
 		.use(nib());
-	}
+	});
 
 //setting jade templates
 app.set('views', './views');
