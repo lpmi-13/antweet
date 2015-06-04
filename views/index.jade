@@ -1,13 +1,4 @@
-doctype
-html
-  head
-    title #{title} - Testerson
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', href='/public/stylesheets/custom.css')
-  body
-    header
-      h1 Test Page
-      form(method="post")
-        input(name="str")
-    footer
-      p(class="res") This is le footer!!!
+extend layout
+block content
+  form(method="post")
+    input(name="str")

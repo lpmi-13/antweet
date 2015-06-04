@@ -1,7 +1,7 @@
 {
   "name": "tesoltest",
   "version": "0.0.1",
-  "private": "true",
+  "private": true,
   "description": "this is a test to fetch tweets",
   "author": "Adam Leskis",
   "main": "app.js",
@@ -10,7 +10,8 @@
     "jade": "^1.10.0",
     "twit": "^1.1.0",
     "stylus": "*",
-    "nib": "*"
+    "nib": "*",
+    "serve-favicon": "~2.2.0"
   },
   "engine": {
     "node": "0.10.x"
