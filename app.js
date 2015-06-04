@@ -1,27 +1,39 @@
-var express = require('express');
-var app = express();
-var bodyparser = require('body-parser');
-var twit = require('twit');
 
+//module dependencies
+var express = require('express'),
+	bodyparser = require('body-parser'),
+	path = require('path'),
+	stylus = require('stylus'),
+	nib = require('nib'),
+	twit = require('twit'),
+	app = express()
+	function compile(str, path) {
+		return stylus(str)
+		.set('filename', path)
+		.use(nib());
+	};
+
+//setting jade templates
 app.set('views', './views');
 app.set('view engine', 'jade');
 
+//setting...ummm, the app, to...ummm...use something...?
+app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(bodyparser.urlencoded({extended: false}));
+app.use(stylus.middleware(
+	{ src: __dirname + 'public',
+	compile: compile
+	}
+));
 
+
+//storing API key variables to be accessed via heroku processes
 var T = new twit({
 	consumer_key: process.env.TWIT_CONSUMER_KEY,
 	consumer_secret: process.env.TWIT_CONSUMER_SECRET,
 	access_token: process.env.TWIT_ACCESS_TOKEN,
 	access_token_secret: process.env.TWIT_ACCESS_TOKEN_SECRET
 });
-
-// function findTweet() {
-// 	T.get('search/tweets', {q: 'awesome', count : 5 }, function (err, data, response) {
-// 		console.log(data.statuses.map(function(t){
-// 			return t.text;
-// 		}));
-// 	});
-// }
 
 app.get('/', function(req, res) {
 	res.render('index', {"query": req.query.string});
@@ -40,8 +52,6 @@ app.post('/', function(req, res) {
 	});
 }
 	findTweet();
-
-	// var reversed = req.body.str.split('').reverse().join('');
-	// res.render('result', {string: reversed});
 });
+
 app.listen(process.env.PORT);
