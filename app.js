@@ -6,6 +6,8 @@ var express = require('express'),
 	favicon = require('serve-favicon'),
 	stylus = require('stylus'),
 	nib = require('nib'),
+	routes = require('./routes/index'),
+    users = require('./routes/users'),
 	twit = require('twit'),
 	app = express();
 
@@ -16,7 +18,7 @@ var express = require('express'),
 	}
 
 //setting jade templates
-app.set('views', './views');
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 //setting...ummm, the app, to...ummm...use something...?
