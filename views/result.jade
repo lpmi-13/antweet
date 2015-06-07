@@ -1,4 +1,23 @@
-extend layout
-block content
-    h1.res Results, son!
-    p. The tweet is '#{string}'
+doctype html
+<head>
+<title>Express - My Sandbox</title>
+<meta name='viewport', content='width=device-width, initial-scale=1'>
+<link rel="stylesheet" href="/public/stylesheets/custom.css">
+</head>
+<body>
+<header>
+<h1>AnTweet</h1>
+</header>
+
+<div class="container">
+<div class="main-content"><p>These are the results</p>
+</div>
+<div class="tweet-content">
+ul
+  each i in string
+    li= i
+</div>
+</div>
+
+
+</body>

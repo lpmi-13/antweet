@@ -1,6 +1,22 @@
-extend layout
-block content
-  form(method="post")
-    input(name="str", placeholder="enter one word here")
-  p.
-    This is a simple web application to display tweets based on search queries. It currently only works with one search term, but should be expanded upon at a later date. Still working with color schemes, so watch this space!
+doctype html
+<head>
+<title>Express - My Sandbox</title>
+<meta name='viewport', content='width=device-width, initial-scale=1'>
+<link rel="stylesheet" href="/public/stylesheets/custom.css">
+</head>
+<body>
+<header>
+<h1>AnTweet</h1>
+</header>
+
+<div class="container">
+<div class="main-content"><p>This is a test to fetch tweets and output
+into the screen. Type in your search term and watch the magic!</p>
+<form method="post">
+<input name="str" placeholder="type your search term here">
+</form>
+</div>
+</div>
+
+
+</body>
