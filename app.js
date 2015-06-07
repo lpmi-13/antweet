@@ -15,6 +15,7 @@ app.set('view engine', 'jade');
 //setting...ummm, the app, to...ummm...use something...?
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(bodyparser.urlencoded({extended: false}));
+app.use(express.static(__dirname, 'public'));
 
 //storing API key variables to be accessed via heroku processes
 var T = new twit({
