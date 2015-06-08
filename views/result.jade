@@ -5,13 +5,13 @@ head
   script.
     $(document).ready(function() {
       $("li").html(function(i,t) {
-          return t.replace(' the ', '___');
+          return t.replace(' the ', ' ___ ');
       });
       $("li").html(function(i,t) {
-          return t.replace(' an ', '___');
+          return t.replace(' an ', ' ___ ');
       });
       $("li").html(function(i,t) {
-          return t.replace(' a ', '___');
+          return t.replace(' a ', ' ___ ');
       });
     });
   link(rel="stylesheet" href="/public/stylesheets/custom.css")
