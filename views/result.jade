@@ -4,14 +4,15 @@ head
   script(src="/public/javascripts/jquery-1.11.3.min.js")
   script.
     $(document).ready(function() {
-      var txt = [];
-      var x = $("li").toArray();
-      for (i = 0; i< x.length; i++) {
-        txt.push(x[i].innerHTML);
-        }
-      for (i = 0; i< txt.length; i++) {
-        console.log(txt[i]);
-      }
+      $("li").html(function(i,t) {
+          return t.replace(' the ', '___');
+      });
+      $("li").html(function(i,t) {
+          return t.replace(' an ', '___');
+      });
+      $("li").html(function(i,t) {
+          return t.replace(' a ', '___');
+      });
     });
   link(rel="stylesheet" href="/public/stylesheets/custom.css")
 
