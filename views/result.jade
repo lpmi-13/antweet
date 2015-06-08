@@ -1,23 +1,26 @@
 doctype html
-<head>
-<title>Express - My Sandbox</title>
-<meta name='viewport', content='width=device-width, initial-scale=1'>
-<link rel="stylesheet" href="/public/stylesheets/custom.css">
-</head>
-<body>
-<header>
-<h1>AnTweet</h1>
-</header>
+head
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  script(src="/public/javascripts/jquery-1.11.3.min.js")
+  script.
+    $(document).ready(function() {
+      var txt = [];
+      var x = $("li").toArray();
+      for (i = 0; i< x.length; i++) {
+        txt.push(x[i].innerHTML);
+        }
+      for (i = 0; i< txt.length; i++) {
+        console.log(txt[i]);
+      }
+    });
+  link(rel="stylesheet" href="/public/stylesheets/custom.css")
 
-<div class="container">
-<div class="main-content"><p>These are the results</p>
-</div>
-<div class="tweet-content">
-ul
-  each i in string
-    li= i
-</div>
-</div>
-
-
-</body>
+body
+  header
+    h1 AnTweet
+  div(class="container")
+    div(class="main-content")
+    div(class="tweet-content")
+      ul#list
+        each i in string
+          li.res= i
