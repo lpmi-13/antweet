@@ -2,29 +2,63 @@ doctype html
 head
   meta(name='viewport', content='width=device-width, initial-scale=1')
   script(src="/public/javascripts/jquery-1.11.3.min.js")
+  link(rel="stylesheet" href="/public/stylesheets/custom.css")
+
   script.
     $(document).ready(function() {
 
-      var button = '<select name="article"><option value="null">-------</option><option value="the">the</option><option value="a">a</option><option value="an">an</option></select>'
+      var tButton = '<select class="the btn" name="the"><option value="null">       </option><option value="the">the</option><option value="a">a</option><option value="an">an</option></select>'
+
+      var anButton = '<select class="an btn" name="an"><option value="null">       </option><option value="the">the</option><option value="a">a</option><option value="an">an</option></select>'
+
+      var aButton = '<select class="a btn" name="a"><option value="null">       </option><option value="the">the</option><option value="a">a</option><option value="an">an</option></select>'
 
       $("li").html(function(i,t) {
-          return t.replace(' the ', button);
+          return t.replace(' the ', ' ' + tButton + ' ');
       });
       $("li").html(function(i,t) {
-          return t.replace(' an ', button);
+          return t.replace(' an ', ' ' + anButton + ' ');
       });
       $("li").html(function(i,t) {
-          return t.replace(' a ', button);
+          return t.replace(' a ', ' ' + aButton + ' ');
       });
-    });
-  link(rel="stylesheet" href="/public/stylesheets/custom.css")
 
+      var back = '<input type="button" value="return to the search page" onclick="history.back(-1)"/>'
+
+      $("#check").click(function() {
+          $(".the").each(function() {
+             if ($(this).val() == 'the') {
+                 $(this).css("background-color", "#00FF00");
+                 $(this).css("pointer-events", "none");
+             }
+          });
+          $(".an").each(function() {
+             if ($(this).val() == 'an') {
+                 $(this).css("background-color", "#00FF00");
+                 $(this).css("pointer-events", "none");
+             }
+          });
+          $(".a").each(function() {
+             if ($(this).val() == 'a') {
+                 $(this).css("background-color", "#00FF00");
+                 $(this).css("pointer-events", "none");
+             }
+          });
+      });
+    }); 
 body
   header
     h1 AnTweet
   div(class="container")
     div(class="main-content")
+      p.
+        Touch the boxes to select your answer. Check your answers at the bottom. When you have the right answer, the button will turn green.
+        You can also return to the search page at any time by pressing the button at the bottom.
     div(class="tweet-content")
       ul#list
         each i in string
           li.res= i
+  div(class="submit")
+    input(type="submit", id="check", value="check your answers")
+  footer
+    input(type="button", class="back", value="Return to the search page", onclick="history.go(-1)")
