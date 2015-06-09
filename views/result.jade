@@ -4,14 +4,17 @@ head
   script(src="/public/javascripts/jquery-1.11.3.min.js")
   script.
     $(document).ready(function() {
+
+      var button = '<select name="article"><option value="null">-------</option><option value="the">the</option><option value="a">a</option><option value="an">an</option></select>'
+
       $("li").html(function(i,t) {
-          return t.replace(' the ', ' ___ ');
+          return t.replace(' the ', button);
       });
       $("li").html(function(i,t) {
-          return t.replace(' an ', ' ___ ');
+          return t.replace(' an ', button);
       });
       $("li").html(function(i,t) {
-          return t.replace(' a ', ' ___ ');
+          return t.replace(' a ', button);
       });
     });
   link(rel="stylesheet" href="/public/stylesheets/custom.css")
