@@ -7,11 +7,11 @@ head
   script.
     $(document).ready(function() {
 
-      var tButton = '<select class="the btn" name="the"><option value="null">       </option><option value="the">the</option><option value="a">a</option><option value="an">an</option></select>'
+      var tButton = '<select class="the btn" name="the"><option value="null">(select)</option><option value="the">the</option><option value="a">a</option><option value="an">an</option></select>'
 
-      var anButton = '<select class="an btn" name="an"><option value="null">       </option><option value="the">the</option><option value="a">a</option><option value="an">an</option></select>'
+      var anButton = '<select class="an btn" name="an"><option value="null">(select)</option><option value="the">the</option><option value="a">a</option><option value="an">an</option></select>'
 
-      var aButton = '<select class="a btn" name="a"><option value="null">       </option><option value="the">the</option><option value="a">a</option><option value="an">an</option></select>'
+      var aButton = '<select class="a btn" name="a"><option value="null">(select)</option><option value="the">the</option><option value="a">a</option><option value="an">an</option></select>'
 
       $("li").html(function(i,t) {
           return t.replace(' the ', ' ' + tButton + ' ');
