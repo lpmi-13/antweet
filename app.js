@@ -34,9 +34,11 @@ app.post('/', function(req, res) {
 	var tweet_top = req.body.str;
 
 	function findTweet() {
-	T.get('search/tweets', {q: ['the', 'a', 'an', tweet_top], include_rts: false, count : 5 }, function (err, data, response) {
+	T.get('search/tweets', {q: ['the', 'a', 'an', tweet_top], include_rts: false, count : 8 }, function (err, data, response) {
 			var topd = data.statuses.map(function(t){
-			return t.text;
+			if (t.indexOf('RT') < 0) {
+				return t.text;
+			}
 		});
 
 		res.render('result', {string: topd});
