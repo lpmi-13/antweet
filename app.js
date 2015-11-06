@@ -19,10 +19,10 @@ app.use(express.static(__dirname, 'public'));
 
 //storing API key variables to be accessed via heroku processes
 var T = new twit({
-	consumer_key: process.env.TWIT_CONSUMER_KEY,
-	consumer_secret: process.env.TWIT_CONSUMER_SECRET,
-	access_token: process.env.TWIT_ACCESS_TOKEN,
-	access_token_secret: process.env.TWIT_ACCESS_TOKEN_SECRET
+	consumer_key: process.env.CONSUMER_KEY,
+	consumer_secret: process.env.CONSUMER_SECRET,
+	access_token: process.env.ACCESS_TOKEN,
+	access_token_secret: process.env.ACCESS_TOKEN_SECRET
 });
 
 app.get('/', function(req, res) {
