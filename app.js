@@ -34,7 +34,7 @@ app.post('/', function(req, res) {
 	var tweet_top = req.body.str;
 
 	function findTweet() {
-	T.get('search/tweets', {q: ['the', 'a', 'an', tweet_top, '-filter:retweets'], count : 5 }, function (err, data, response) {
+	T.get('search/tweets', {q: ['the', 'a', 'an', tweet_top, '-exclude:retweets'], count : 5 }, function (err, data, response) {
 			var topd = data.statuses.map(function(t){
 				return t.text;
 		});
@@ -45,4 +45,4 @@ app.post('/', function(req, res) {
 	findTweet();
 });
 
-app.listen(process.env.PORT);
+app.listen(process.env.PORT || 3000);
