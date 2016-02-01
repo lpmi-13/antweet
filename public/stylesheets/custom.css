@@ -34,6 +34,18 @@ body {
   overflow: auto;
 }
 
-.back {
-  float: right;
+#check {
+  font-size: 22px;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  border-radius: 10px
 }
+
+.back {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  font-size: 22px;
+  border-radius: 10px;
+} 
