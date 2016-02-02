@@ -39,7 +39,8 @@ body {
   position: fixed;
   top: 15px;
   left: 15px;
-  border-radius: 10px
+  border-radius: 10px;
+  color: #D3D3D3;
 }
 
 .back {
@@ -48,4 +49,5 @@ body {
   right: 15px;
   font-size: 22px;
   border-radius: 10px;
+  color: #D3D3D3;
 } 
