@@ -40,8 +40,8 @@ body {
   top: 15px;
   left: 15px;
   border-radius: 10px;
-  color: #CCFFFF;
-  font-color: #000000;
+  background-color: #ff4719;
+  color: #000000;
 }
 
 .back {
@@ -50,6 +50,6 @@ body {
   right: 15px;
   font-size: 22px;
   border-radius: 10px;
-  color: #CCFFFF;
-  font-color: #000000;
+  background-color: #000000;
+  color: #ff4719;
 } 
