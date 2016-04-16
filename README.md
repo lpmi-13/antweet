@@ -8,5 +8,3 @@ real-time data from the Twitter Search API, stripping the articles and asking th
 -Refactor to eliminate duplicate results
 
 -Add functionality for the user to specify number of results
-
--Eliminate retweets
