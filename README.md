@@ -5,6 +5,4 @@ real-time data from the Twitter Search API, stripping the articles and asking th
 
 <b>Directions for future development</b>
 
--Refactor to eliminate duplicate results
-
 -Add functionality for the user to specify number of results
