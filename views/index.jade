@@ -1,6 +1,7 @@
 doctype html
 head
   meta(name='viewport', content='width=device-width, initial-scale=1')
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
   link(rel="stylesheet" href="/public/stylesheets/custom.css")
 
 body
@@ -8,8 +9,6 @@ body
     h1 A(n)Tweet
 
   div(class="container")
-  div(class="main-content")
-    h2.
-      Type in your search term and watch the magic!
-    form(method="post")
-      input(name="str" placeholder="type your search term here")
+    div(class="main-content")
+      form(method="post")
+        input(class="form-control" name="str" placeholder="type your search term here")

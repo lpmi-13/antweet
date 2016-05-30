@@ -23,6 +23,11 @@ h2 {
   padding-left: 0px;
 }
 
+#list li {
+  line-height: 2em;
+  font-size: 3rem;
+}
+
 .res {
   font-family: 'Quicksand';
   color: #e6dae1;
@@ -56,4 +61,10 @@ h2 {
   border-radius: 10px;
   background-color: #000000;
   color: #ff4719;
-} 
+}
+
+.form-control {
+  margin-top: 15rem;
+  height: auto;
+  font-size: 5rem;
+}
