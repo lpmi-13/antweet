@@ -29,7 +29,7 @@ app.get('/', function(req, res) {
 	res.render('index', {"query": req.query.string});
 });
 
-app.post('/antweet', function(req, res) {
+app.post('/', function(req, res) {
 
 	var tweet_top = req.body.str;
 
