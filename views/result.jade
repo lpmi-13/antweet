@@ -2,64 +2,10 @@ doctype html
 head
   meta(name='viewport', content='width=device-width, initial-scale=1')
   script(src="/static/antweet/public/javascripts/jquery-1.11.3.min.js")
+  script(src="/static/antweet/public/javascripts/custom.js")
   link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
   link(rel="stylesheet" href="/antweet/public/stylesheets/custom.css")
 
-  script.
-    $(document).ready(function() {
-
-      var tButton = '<select class="the btn" name="the"><option value="null">(select)</option><option value="the">the</option><option value="a">a</option><option value="an">an</option></select>'
-
-      var anButton = '<select class="an btn" name="an"><option value="null">(select)</option><option value="the">the</option><option value="a">a</option><option value="an">an</option></select>'
-
-      var aButton = '<select class="a btn" name="a"><option value="null">(select)</option><option value="the">the</option><option value="a">a</option><option value="an">an</option></select>'
-
-      $("li").html(function(i,t) {
-          return t.replace(' the ', ' ' + tButton + ' ');
-      });
-      $("li").html(function(i,t) {
-          return t.replace(' an ', ' ' + anButton + ' ');
-      });
-      $("li").html(function(i,t) {
-          return t.replace(' a ', ' ' + aButton + ' ');
-      });
-
-      var back = '<input id="back-button" type="button" value="return to the search page" />'
-
-      $('#back-button').click(function() {
-        history.back(-1);
-      });
-
-      $("#check").click(function() {
-          $(".the").each(function() {
-             if ($(this).val() == 'the') {
-                 $(this).css("background-color", "#ff4719");
-                 $(this).css("border", "black");
-                 $(this).css("border-width", "1px");
-                 $(this).css("border-style", "solid");
-                 $(this).css("pointer-events", "none");
-             }
-          });
-          $(".an").each(function() {
-             if ($(this).val() == 'an') {
-                 $(this).css("background-color", "#ff4719");
-                 $(this).css("border", "black");
-                 $(this).css("border-width", "1px");
-                 $(this).css("border-style", "solid");
-                 $(this).css("pointer-events", "none");
-             }
-          });
-          $(".a").each(function() {
-             if ($(this).val() == 'a') {
-                 $(this).css("background-color", "#ff4719");
-                 $(this).css("border", "black");
-                 $(this).css("border-width", "1px");
-                 $(this).css("border-style", "solid");
-                 $(this).css("pointer-events", "none");
-             }
-          });
-      });
-    }); 
 body
   header
     h1 A(n)Tweet
@@ -79,4 +25,4 @@ body
           li.res= i
   div(class="submit")
     input(type="submit", id="check", value="Check")
-    input(type="button", class="back", value="Search Again", onclick="history.go(-1)")
+    input(type="button", id="back-button" class="back", value="Search Again")
