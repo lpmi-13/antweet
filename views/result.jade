@@ -1,7 +1,7 @@
 doctype html
 head
   meta(name='viewport', content='width=device-width, initial-scale=1')
-  script(src="https://code.jquery.com/jquery-1.11.3.min.js")
+  script(src="/static/antweet/javascripts/jquery-1.11.3.min.js")
   link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
   link(rel="stylesheet" href="/antweet/public/stylesheets/custom.css")
 
@@ -24,7 +24,11 @@ head
           return t.replace(' a ', ' ' + aButton + ' ');
       });
 
-      var back = '<input type="button" value="return to the search page" onclick="history.back(-1)"/>'
+      var back = '<input id="back-button" type="button" value="return to the search page" />'
+
+      $('#back-button').click(function() {
+        history.back(-1);
+      });
 
       $("#check").click(function() {
           $(".the").each(function() {
